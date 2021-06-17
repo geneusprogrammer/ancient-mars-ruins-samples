@@ -1,5 +1,10 @@
 # Original DFS algorithm used in the video
 
+import numpy as np
+import time
+import sys
+
+
 def traverse_map(map_data, row=0, col=0, direction='B'):
     if row < 0 or col < 0 or row >= len(map_data)\
         or col >= len(map_data[0]) or map_data[row][col] == 0:
@@ -26,3 +31,13 @@ def traverse_map(map_data, row=0, col=0, direction='B'):
     else:
         return ''
         
+        
+# EXECUTION        
+        
+map_np = np.array(maze_map)
+
+map_path = traverse_map(map_np)
+assert map_path == 'BESSSSEEENNNEEEEEEEEEEEESSSSSEESSSWWSSSSSSSSWWWWNNWWWG!'
+print(map_path)       
+
+
